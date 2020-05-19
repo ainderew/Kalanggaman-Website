@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet"  href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;700&display=swap">
-    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-database.js"></script>
-    <script src="https://kit.fontawesome.com/82758b010a.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 <body>
@@ -216,6 +213,57 @@
            <h1 class="text-path-7 kalanggaman-text">KALANGGAMAN</h1>
            <h1 class="text-path-7 island-text">ISLAND</h1>
         </section>
+        <section class="section9" id = "sec9">
+            <div class="form-container">
+                <div class="form-left-col">
+                    <div class="contact-info-containers">
+                        <h1>Contact Info</h1>
+                        <div class="contact-info location ">
+                            <i class="fas fa-search-location"></i>
+                            <h2>
+                                Kalanggaman West<br>
+                                Wing, 6538,<br>
+                                Palompon, Leyte<br>
+                                Philippines
+                            </h2>
+                        </div>
+                        <div class="contact-info email">
+                            <i class="fas fa-envelope-open-text"></i>
+                            <h2>LoremIpsum@gmail.com</h2>
+                        </div>
+                        <div class="contact-info number">
+                            <i class="fas fa-phone"></i>
+                            <h2>(053) 555 9731</h2>
+                        </div>    
+                    </div>
+                    <div class="contact-socialMedia">
+                        <a href=""><i class="fab fa-facebook-square"></i></a>
+                        <a href=""><i class="fab fa-facebook-messenger"></i></a>
+                        <a href=""><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="form-right-col">
+                    <h1>MAKE RESERVATION</h1>
+                    <form method = "POST" action="https://kalanggaman-api.herokuapp.com/formsubmit">
+                      <div class="form-input-divider">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id = "nameInput">
+                      </div>
+                      <div class="form-input-divider">
+                        <label for="email">Emails</label>
+                        <input type="text" name="email" id = "emailInput">
+                      </div>
+                      <div class="form-input-divider">
+                        <label for="number">Phone Number</label>
+                        <input type="number" name="phoneNumber" id = "numberInput">
+                      </div>
+                        
+                        
+                        <button id="form-submit" type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </section>
         <section class="section8">
             <div class="sec-8-col-1-menu">
                 <ul class="sec-8-col-1-menu-ul fixed">
@@ -258,31 +306,6 @@
                         
                     </div>
                 </a>
-            </div>
-        </section>
-        <section class="section9" id = "sec9">
-            <div class="form-container">
-                <div class="form-left-col"></div>
-                <div class="form-right-col">
-                    <h1>MAKE RESERVATION</h1>
-                    <form method = "POST" action="https://kalanggaman-api.herokuapp.com/formsubmit">
-                      <div class="form-input-divider">
-                        <label for="name">Name</label>
-                        <input type="text" name="name" id = "nameInput">
-                      </div>
-                      <div class="form-input-divider">
-                        <label for="email">Emails</label>
-                        <input type="text" name="email" id = "emailInput">
-                      </div>
-                      <div class="form-input-divider">
-                        <label for="number">Phone Number</label>
-                        <input type="number" name="phoneNumber" id = "numberInput">
-                      </div>
-                        
-                        
-                        <button id="form-submit" type="submit">Submit</button>
-                    </form>
-                </div>
             </div>
         </section>
 
@@ -342,6 +365,7 @@
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
     <script src="./js/countUp.js" defer></script>
     <script src="./js/index.js" defer></script>
+    <script src="https://kit.fontawesome.com/82758b010a.js" crossorigin="anonymous"></script>
    
 </body>
 </html>

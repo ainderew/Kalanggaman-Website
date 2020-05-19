@@ -885,28 +885,72 @@ body{
     display: flex;
     align-items: center;
     .form-container{
-        width: 90%;
-        height: 90%;
+        width: 70%;
+        height: 80%;
         margin: auto;
         display: grid;
-        grid-template-columns: 1fr 3fr;
-        box-shadow: -15px -15px 15px rgba(255,255,255,0.5),
-                    15px 15px 15px rgba(0,0,0,0.05);
+        grid-template-columns: 1.4fr 3fr;
+        box-shadow: 5px 5px 21px #e3e3e3, 
+        -5px -5px 21px #ffffff;
+        border-radius: 3rem;
         .form-left-col{
             grid-column: 1/2;
-            border: 1px blue solid;
+            display: flex; 
+            align-items: center;
+            justify-content: center;
+            background: var(--dark-third-color);
+            border-radius: 3rem 0 0 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            color: rgb(248, 248, 248);
+            padding: 4rem 3rem;
+            h1{
+                width: 100%;
+                margin: 0 0 2rem -1rem;
+            }
+            h2{
+                font-size: .9rem;
+                font-weight: 400;
+            }
+            .contact-info-containers{
+                width: 100%;
+                .contact-info{
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 2rem;
+                    .fas{
+                        font-size: 2rem;
+                        padding-right: 1rem;
+                    }
+                }
+            }
+            .contact-socialMedia{
+                width: 100%;
+                .fab{
+                    font-size: 2rem;
+                    color: white;
+                    padding-right: 1rem;
+                }
+            }
         }
         .form-right-col{
             display: flex;
             flex-direction: column;
             justify-content: space-evenly;
             grid-column: 2/3;
-            border: 1px blue solid;
+            
             form{
                 width: 100%;
             }
             #form-submit{
                 margin: 2rem 0 0 10rem;
+                height: 2.5rem;
+                width: 7rem;
+                border: none;
+                background: var(--light-main-color);
+                color: white;
+                font-size: 1rem;
             }
         }
         .form-input-divider{
@@ -1140,6 +1184,27 @@ body{
                 .sec-8-col-1-menu-li-links{
                     font-size: 2rem;
                 }
+            }
+        }
+    }
+    .section9{
+        .form-container{
+            grid-template-columns: 1fr;
+            width: 90%;
+            .form-right-col{
+                grid-column: 1/2;
+                .form-input-divider{
+                    padding: 0 3rem;
+                }
+                #form-submit{
+                    margin: 2rem 0 0 8rem;
+                }
+                h1{
+                    padding: 0 3rem;
+                }
+            }
+            .form-left-col{
+                display: none;
             }
         }
     }
