@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet"  href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;700&display=swap">
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-database.js"></script>
+    <script src="https://kit.fontawesome.com/82758b010a.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <section class="landing-section" onclick="userScroll()">
+        <h1 id="landing-logo">DreamsBerry</h1>
+        <video class="video-bg" loop muted autoplay src="./img/videoplayback1.mp4"></video>
+        <div class="landing-text-container">
+            <div id="line"></div>
+            <h1 class="landing-header"><span>Explore</span> Leyte <br>in comfort and security</h1>
+        </div>
+        <div class="landing-info">
+            <div class="landing-info-left">
+                <h2>PALOMPON</h2>
+                <h1>Kalanggaman</h1>
+            </div>
+            <div class="landing-info-right"></div>
+        </div>
+    </section>
+    <div class="mainContainer">
+
+        <div class="progress-container">
+            <div class="progress-bar" id="myBar"></div>
+        </div>
+        <div id="scroll-down-indicator">
+            <i class="fas fa-long-arrow-alt-down"></i>
+            <h4>scroll down</h4>
+        </div>
+
+
+        <img id="burger-btn" src="./img/burger.svg" alt="">
+        <header id="phoneNavBar">
+            <div class="phoneNav-Logo-Container">
+                <h1 id="phoneNav-Logo">DreamsBerry</h1>
+            </div>
+            <nav class="phoneNav-Nav">
+                <ul class="phoneNav-Ul">
+                    <li class="phoneNav-li"><a class="phoneNav-li-link" href="">Home</a></li>
+                    <li class="phoneNav-li"><a class="phoneNav-li-link" href="">Contact us</a></li>
+                    <li class="phoneNav-li"><a class="phoneNav-li-link" href="">About</a></li>
+                    <li class="phoneNav-li"><a class="phoneNav-li-link" href="#">Blogs</a></li>
+                </ul>
+            </nav>
+            <div class="phoneNav-Btn-Container">
+                <button id="phoneNav-Btn" >Reserve Now</button>
+    
+            </div>
+        </header>
+
+        <section class="section1">
+            <header class = "siteNavBar">
+                <nav id="header-nav">
+                    <a href="#mainCont" id="nav-logo-container"><h1 id="nav-logo">DreamsBerry</h1></a>
+                    <ul id="nav-ul">
+                        <li class="nav-li"><a class="nav-li-link" href="">Home</a></li>
+                        <li class="nav-li"><a class="nav-li-link" href="">Contact us</a></li>
+                        <li class="nav-li"><a class="nav-li-link" href="./Database.html">About</a></li>
+                        <li class="nav-li"><a class="nav-li-link" href="#sec9">Blogs</a></li>
+                    </ul>
+                    <a href=""id = "nav-reserve">Reserve Now</a>
+                </nav>
+            </header>
+            <div class="section1-carousel">
+               <div class="carousel-track-container">
+                    <ul class="carousel-track">
+                        <li class="carousel-slide current-slide">
+                            <div class="carousel-img img1"></div>
+                        </li>
+                        <li class="carousel-slide">
+                            <div class="carousel-img img2"></div>
+                        </li>
+                        <li class="carousel-slide">
+                            <div class="carousel-img img3"></div>
+                        </li>
+                    </ul>
+               </div>
+               <div class="section-1-info">
+                   <div class="info-1-left">
+                        <h2 class="info-secondary-header">PALOMPON</h2>
+                        <h1 class="info-primary-header">Kalanggaman Island</h1>
+                   </div>
+                   <div class="info-1-right">
+                        <div class="info-right-sec1">
+                            <h1 class="info-right-h1">More Info</h1>
+                            <h2 class="info-right-h2">Pricing</h2>
+                        </div>
+                        <div class="info-right-sec2">
+                            <button class="info-button">+</button>
+                        </div>
+                   </div>
+               </div>
+                <button class="carousel-btn-cont carousel-up-btn">
+                    <img class="carousel-btn" src="./img/upArrow.svg" alt="">
+                </button>
+                <button class="carousel-btn-cont carousel-down-btn">
+                    <img class="carousel-btn" src="./img/downArrow.svg" alt="">
+                </button>
+
+                <div class="carousel-nav">
+                    <button class="carousel-indicator current-slide-indicator"></button>
+                    <button class="carousel-indicator"></button>
+                    <button class="carousel-indicator"></button>
+                </div>
+            </div>
+        </section>
+        <section class="section2">
+            <div class="sec-2-upper">
+                <div class="sec-2-upper-left">
+                   <div class="sec2-left-wrapper">
+                        <h1 class="sec-2-heading">
+                            <span class="sec2-heading-hide">See Your Trip</span>
+                        </h1>
+                        <h2 class="sec-2-paragraph">
+                            <span class="sec2-paragraph-hide hide1">
+                                See and know all the activities on your upcomming trip.
+                            </span>
+                        </h2>
+                        <h2 class="sec-2-paragraph">
+                            <span class="sec2-paragraph-hide hide2">
+                                know what to expect so you can prepare and plan now and 
+                            </span>
+                        </h2>
+                        <h2 class="sec-2-paragraph">
+                            <span class="sec2-paragraph-hide hide3">
+                                spend all your time later enjoying. Skip all the hassle and
+                            </span>
+                        </h2>
+                        <h2 class="sec-2-paragraph">
+                            <span class="sec2-paragraph-hide hide4">
+                                troubles of going on vacation with a personalized plan.
+                            </span>
+                        </h2>
+                        <div class="button-container">
+                            <a id="sec-2-btn" href="#">Let's Plan!</a>
+                        </div>
+                   </div>
+                </div>
+                <div class="sec-2-upper-right">
+                    <div class="sec-2-track">
+                        <div class="sec-2-imgs sec2Img1"></div>
+                        <div class="sec-2-imgs sec2Img2"></div>
+                        <div class="sec-2-imgs sec2Img3"></div>
+                        <div class="sec-2-imgs sec2Img4"></div>
+                        <div class="sec-2-imgs sec2Img5"></div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="sec-2-lower">
+            </div>
+        </section>
+        <section class="section3">
+            <div class="sec-3-img"></div>
+            <div class="sec-3-review">
+                <h1 class="sec-3-reviewTitle">Epitome of Paradise</h1>
+                
+                <div class="sec-3-quote">
+                    <h2>Without a doubt the most beautiful</h2>
+                    <h2>place I’ve ever been to.</h2>
+                    <h2>Fine powdery white sands covers this</h2>
+                    <h2>paradise and kisses your feet</h2>
+                </div>
+                <h2>-juliabebu</h2>
+                
+            </div>
+        </section>
+        <section class="section4">
+            <div class="tag-line-container">
+                <h1 id="counter-container"><span id="counter">0</span></h1>
+                <div id="tag-line-1">
+                    <h1>Meters</h1>
+                    <h2>Of pure beauty</h2>
+                </div>
+            </div>
+            
+        </section>
+        <section class="section5">
+            <div class="sec-5-review">
+                <div class="sec-5-review-title">
+                    <img id="tripadvisor-logo" src="./img/Tripadvisor.svg" alt="Tripadvisor Logo">
+                </div>
+                <div class="sec-5-review-wrapper">
+                    <div class="sec-5-review-container">
+                        <h1 class="sec-5-review-content">#1 of 7 things to do in Leyte Island</h1>
+                        <img id="star-rating" src="./img/stars.svg" alt="4 and a half stars out of 5">
+                        <h2 class="sec-5-review-secondaryContent">748 Reviews</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="sec-5-img"></div>
+        </section>
+
+        <section class="section6">
+            <div class="sec-6-tagline-container">
+                <h1 id="sec-6-counter">0</h1>
+                <div class="sec-6-tagline">
+                    <h1>5 star reviews</h1>
+                    <div class="sec-6-secondary-tagline">
+                        <h2 id="sec-6">On </h2>
+                        <img id="sec-6-tagline-tripadvisor" src="./img/Tripadvisor.svg" alt="Trip advisor">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <section class="section7">
+           <h1 class="text-path-7 kalanggaman-text">KALANGGAMAN</h1>
+           <h1 class="text-path-7 island-text">ISLAND</h1>
+        </section>
+        <section class="section8">
+            <div class="sec-8-col-1-menu">
+                <ul class="sec-8-col-1-menu-ul fixed">
+                    <li class="sec-8-col-1-menu-li"><a class="sec-8-col-1-menu-li-links font-effect-outline" href="">TOURS</a></li>
+                    <li class="sec-8-col-1-menu-li"><a class="sec-8-col-1-menu-li-links font-effect-outline" href="">GALLERY</a></li>
+                    <li class="sec-8-col-1-menu-li"><a class="sec-8-col-1-menu-li-links font-effect-outline" href="">RATES AND FEES</a></li>
+                    <li class="sec-8-col-1-menu-li">
+                        <div class="sec-8-col-1-menu-li-preview"></div>
+                    </li>
+                    
+                </ul>
+            </div>
+            <div class="sec-8-col-2-content">
+                <a class="main-article" href="">
+                    <div class="sec-8-col-2-article1">
+                        <div class="article1-img"></div>
+                        <div class="article-1-text-container">
+                            <h1 class="article-1-title">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h1>
+                            <h2 class="article-1-subheading">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia ullam voluptatem eveniet, amet odio eaque vero assumenda veritatis doloremque blanditiis?</h1>
+                        </div>
+                    </div>
+                </a>
+                <a class="secondary-article" href="">
+                    <div class="sec-8-col-2-article">
+                        
+                    </div>
+                </a>
+                <a class="sub-article" href="">
+                    <div class="sec-8-col-2-article1 secondary-article">
+                        
+                    </div>
+                </a>
+                <a class="sub-article" href="">
+                    <div class="sec-8-col-2-article1 secondary-article">
+                        
+                    </div>
+                </a>
+                <a href="">
+                    <div class="sec-8-col-2-article1 secondary-article">
+                        
+                    </div>
+                </a>
+            </div>
+        </section>
+        <section class="section9" id = "sec9">
+            <div class="form-container">
+                <div class="form-left-col"></div>
+                <div class="form-right-col">
+                    <h1>MAKE RESERVATION</h1>
+                    <form method = "POST" action="http://localhost:3000/records">
+                      <div class="form-input-divider">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id = "nameInput">
+                      </div>
+                      <div class="form-input-divider">
+                        <label for="email">Email</label>
+                        <input type="text" name="email" id = "emailInput">
+                      </div>
+                      <div class="form-input-divider">
+                        <label for="number">Phone Number</label>
+                        <input type="number" name="phoneNumber" id = "numberInput">
+                      </div>
+                        
+                        
+                        <button id="form-submit" type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-col-1">
+                <div class="footer-col-1-spacer"></div>
+                <div class="footer-col-1-content">
+                    <h1 class="footer-col-1-title">KALANGGAMAN<br/> ISLAND</h1>
+                    <h2 class="footer-col-1-h2">Crystal clear blue<br/> oceans, a paradise<br/> waiting to be visited</h2>
+                </div>
+            </div>
+            <div class="footer-col-2">
+                <div class="footer-col-2-spacer"></div>
+                <div class="footer-col-2-visit">
+                    <h1 class="footer-col-2-visit-title">Visit us</h1>
+                    <h2 class="footer-col-2-visit-content">Kalanggaman West<br/> Wing, 6538,<br/> Palompon, Leyte<br/> Philippines</h2>
+                </div>
+                <div class="footer-col-2-contact">
+                    <div class="footer-col-2-contact-email">
+                        <h1 class="footer-col-2-contact-email-title">Email</h1>
+                        <h2 class="footer-col-2-contact-email-content">kalanggaman@gmail.com</h1>
+                    </div>
+                    <div class="footer-col-2-contact-phone">
+                        <h1 class="footer-col-2-contact-phone-title">Phone Number</h1>
+                        <h1 class="footer-col-2-contact-phone-content">(053) 555 9731</h1>
+                    </div>
+
+                </div>
+            </div>
+            <div class="footer-col-3">
+                <div class="footer-col-3-spacer"></div>
+                <div class="footer-col-3-socialMedia">
+                    <h1 class="footer-col-3-socialMedia-title">Follow us</h1>
+                    <div class="footer-col-3-socialMedia-links-container">
+                        <a href="https://www.facebook.com/kalanggaman" class="footer-col-3-socialMedia-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#messenger" class="footer-col-3-socialMedia-link"><i class="fab fa-facebook-messenger"></i></a>
+                        <a href="#insta" class="footer-col-3-socialMedia-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-col-4">
+                <div class="footer-col-4-hireMe-container">
+                    <h1 class="footer-col-4-hireMe-title">HIRE ME</h1>
+                    <h2 class="footer-col-4-hireMe-email">andrewapinon@gmail.com</h2>
+                    <h2 class="footer-col-4-hireMe-number">(+63) 9175283855</h2>
+                </div>
+                <div class="copyright-container">
+                    <h1 class="copyright-text">&copy; 2020 Andrew A. Piñon. All Rights Reserved</h1>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <div class="slider"></div>
+    <div class="slider2">
+        
+    </div>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+    <script src="./js/countUp.js" defer></script>
+    <script src="./js/index.js" defer></script>
+   
+</body>
+</html>
