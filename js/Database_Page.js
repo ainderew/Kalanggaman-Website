@@ -4,7 +4,7 @@ const dataContainer = document.querySelector(".dataContainer");
 
 
 const getData = async () =>{
-    const response = await fetch("https://salty-chamber-88007.herokuapp.com/database",{
+    const response = await fetch("https://kalanggaman-api.herokuapp.com/database",{
         method: "GET",
         mode: "cors"
     })
