@@ -1,6 +1,7 @@
 let arrayHolder = [];
 const dataList = document.querySelector(".data-list");
 const dataContainer = document.querySelector(".dataContainer");
+const loader = document.querySelector(".lds-ring");
 
 
 const getData = async () =>{
@@ -12,11 +13,11 @@ const getData = async () =>{
     .then(data => {
          arrayHolder = data;
     })
-    console.log(arrayHolder)
+    loader.style.display = "none";   
     dataDisplay()
 }
 
-console.log(arrayHolder)
+
 
 const dataDisplay = () =>{
     arrayHolder.forEach((el,index)=>{
