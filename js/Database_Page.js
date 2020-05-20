@@ -2,10 +2,25 @@ let arrayHolder = [];
 const dataList = document.querySelector(".data-list");
 const dataContainer = document.querySelector(".dataContainer");
 const loader = document.querySelector(".lds-ring");
+const nextPage = document.getElementById("nextpage-btn");
+const prevPage = document.getElementById("prevpage-btn");
+let page = 1;
 
+const refreshData = () =>{
+    dataList.innerHTML = ""
+    getData();
+}
+nextPage.addEventListener("click",()=>{
+    page++;
+    refreshData();
+})
+prevPage.addEventListener("click",()=>{
+    page--;
+    refreshData();
+})
 
 const getData = async () =>{
-    const response = await fetch("https://kalanggaman-api.herokuapp.com/database",{
+    const response = await fetch(`https://kalanggaman-api.herokuapp.com/database?page=${page}&limit=5`,{
         method: "GET",
         mode: "cors"
     })
