@@ -26,7 +26,7 @@ const getData = async () =>{
     })
     .then(response => response.json())
     .then(data => {
-         arrayHolder = data;
+         arrayHolder = data.results;
     })
     loader.style.display = "none";   
     dataDisplay()

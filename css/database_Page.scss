@@ -69,8 +69,14 @@ body{
         }
         .page-container{
             justify-content: flex-end;
+            align-items: center;
             .page-icon-container{
-                width: 1rem;
+                width: .8rem;
+            }
+            .page-counter-container{
+                h1{
+                    font-size: 1rem;
+                }
             }
         }
     }
