@@ -83,7 +83,7 @@ const getTotalPage = async () =>{
 const getSearchedData = async () => {
     let searchedInput = document.getElementById("searchBar")
     console.log(searchedInput.value)
-    const response = await fetch(`http://localhost:3000/database/findSpecific?search=${searchedInput.value}`, {
+    const response = await fetch(`https://kalanggaman-api.herokuapp.com/database/findSpecific?search=${searchedInput.value}`, {
         method: "GET",
         mode: "cors",
     })
