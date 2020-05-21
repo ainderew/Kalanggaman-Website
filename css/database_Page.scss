@@ -15,13 +15,47 @@ body{
     grid-row: 1/2;
     // border: blue solid 2px;
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
+    justify-content: flex-end;
+    .search-toolbar-container{
+        width: 100%;
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        padding: 0 3rem;
+
+
+        form{
+            width: 40%;
+            position: relative;
+            #searchBar{
+                width: 100%;
+                height: 2rem;
+                outline: none;
+                border-radius: .5rem;
+                border: 1px solid rgba($color: #000000, $alpha: .2);
+                padding: 0 3rem;
+               
+            }
+        }
+        form::before{
+            content: "";
+            position: absolute;
+            width: 1rem;
+            height: 1rem;
+            left: 1rem;
+            top: .5rem;
+            background:url(../img/databaseIcons/search.svg);
+        }
+
+    }
     .functional-toolbar-container{
         width: 100%;
         height: 3rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        padding: 0 3rem;
         border: 1px solid blue;
         .actions-container,.page-container{
             width: 35%;
@@ -35,6 +69,7 @@ body{
                 width: 1.2rem;
                 margin: 0 1rem 0 0;
                 position: relative;
+                
                
                 .action-icon{
                     width:100%;
@@ -44,13 +79,14 @@ body{
                 }
                 .icon-modal{
                     position: absolute;
-                    top: 130%;
+                    top: 140%;
                     left: 50%;
                     transform: translate(-50%,-50%);
                     align-items: center;
                     justify-content: center;
                     background: rgb(88, 88, 88);
                     display: none;
+                    ;
                    
                     h1{
                         font-size: .8rem;
@@ -64,6 +100,7 @@ body{
                 }
                 .action-icon:hover{
                     width: 120%;
+                   
                 }
             }
         }

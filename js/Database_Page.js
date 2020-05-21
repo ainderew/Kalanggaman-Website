@@ -5,11 +5,24 @@ const loader = document.querySelector(".lds-ring");
 const nextPage = document.getElementById("nextpage-btn");
 const prevPage = document.getElementById("prevpage-btn");
 let page = 1;
+const currentPage = document.getElementById("currentPage");
+const totalPage = document.getElementById("totalPage");
+
+(sessionStorage.page == null) ?  page = page : page = sessionStorage.page;
+
 
 const refreshData = () =>{
     dataList.innerHTML = ""
+    loader.style.display = "block";
     getData();
+    sessionStorage.page = page;
 }
+const refreshSearchData = () =>{
+    dataList.innerHTML = ""
+    loader.style.display = "block";
+    dataDisplay();
+}
+
 nextPage.addEventListener("click",()=>{
     page++;
     refreshData();
@@ -19,6 +32,10 @@ prevPage.addEventListener("click",()=>{
     refreshData();
 })
 
+const pageBtnHider = (prev,next) => {
+    (prev == undefined) ? prevPage.style.display = "none" : prevPage.style.display = "inline-block";
+    (next == undefined) ? nextPage.style.display = "none" : nextPage.style.display = "inline-block";
+}
 const getData = async () =>{
     const response = await fetch(`https://kalanggaman-api.herokuapp.com/database?page=${page}&limit=5`,{
         method: "GET",
@@ -27,14 +44,15 @@ const getData = async () =>{
     .then(response => response.json())
     .then(data => {
          arrayHolder = data.results;
+         currentPage.textContent = data.current.page;
+         pageBtnHider(data.prev,data.next)
     })
-    loader.style.display = "none";   
     dataDisplay()
+    
 }
 
-
-
 const dataDisplay = () =>{
+    
     arrayHolder.forEach((el,index)=>{
         let li = document.createElement("li");
         if (index%2 === 0){
@@ -49,6 +67,32 @@ const dataDisplay = () =>{
         <div class="date-col col"><h1>Date Reserved</h1></div>`
         dataList.appendChild(li);
     })
+    loader.style.display = "none"; 
     
 }
+const getTotalPage = async () =>{
+    const response = await fetch(`https://kalanggaman-api.herokuapp.com/database?page=1&limit=5`,{
+        method: "GET",
+        mode: "cors"
+    })
+    .then(response => response.json())
+    .then(data => totalPage.textContent = data.totalPage);
+
+}
+
+const getSearchedData = async () => {
+    let searchedInput = document.getElementById("searchBar")
+    console.log(searchedInput.value)
+    const response = await fetch(`http://localhost:3000/database/findSpecific?search=${searchedInput.value}`, {
+        method: "GET",
+        mode: "cors",
+    })
+    .then(response => response.json())
+    .then(data => arrayHolder = data)
+    console.log(arrayHolder);
+    refreshSearchData();
+}
+ 
+    
 getData();
+getTotalPage();
