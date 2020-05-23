@@ -1257,6 +1257,13 @@ body {
   width: 100%;
 }
 
+.section9 .form-container .form-right-col form input {
+  height: 2rem;
+  border-radius: .2rem;
+  font-size: 1rem;
+  padding: 0 1rem;
+}
+
 .section9 .form-container .form-right-col #form-submit {
   margin: 2rem 0 0 10rem;
   height: 2.5rem;
@@ -1280,6 +1287,14 @@ body {
 
 .section9 .form-container .form-input-divider label {
   padding: 1rem 0;
+}
+
+.section9 .form-container .form-input-divider #numberInput {
+  background: url(../img/philippines.svg) no-repeat;
+  background-position: center;
+  background-position-x: .5rem;
+  background-size: 3.5rem;
+  padding: .2rem 0 0 4.5rem;
 }
 
 .footer {

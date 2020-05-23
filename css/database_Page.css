@@ -10,6 +10,18 @@ body {
   height: 100vh;
   display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 5fr;
+      grid-template-columns: 1fr 5fr;
+}
+
+.database-page-container {
+  width: 100%;
+  height: 100%;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  display: -ms-grid;
+  display: grid;
   -ms-grid-rows: 1fr .2fr 3fr;
       grid-template-rows: 1fr .2fr 3fr;
 }
@@ -39,24 +51,34 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 0 3rem;
 }
 
-.header-container .search-toolbar-container form {
+.header-container .search-toolbar-container #searchForm {
   width: 40%;
   position: relative;
 }
 
-.header-container .search-toolbar-container form #searchBar {
+.header-container .search-toolbar-container #searchForm #searchBar {
   width: 100%;
   height: 2rem;
   outline: none;
   border-radius: .5rem;
-  border: 1px solid rgba(0, 0, 0, 0.2);
   padding: 0 3rem;
 }
 
-.header-container .search-toolbar-container form::before {
+.header-container .search-toolbar-container #searchForm .red {
+  border: 1px solid #f70000;
+}
+
+.header-container .search-toolbar-container #searchForm .grey {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.header-container .search-toolbar-container #searchForm::before {
   content: "";
   position: absolute;
   width: 1rem;
@@ -64,6 +86,40 @@ body {
   left: 1rem;
   top: .5rem;
   background: url(../img/databaseIcons/search.svg);
+}
+
+.header-container .search-toolbar-container .filterForm {
+  height: 2rem;
+  width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.header-container .search-toolbar-container .filterForm #filterSelect {
+  height: 100%;
+  width: 30%;
+  border-radius: .5rem;
+}
+
+.header-container .search-toolbar-container .filterForm label {
+  margin-right: 1rem;
+}
+
+.header-container .search-toolbar-container .filterForm button {
+  margin-left: 1rem;
+  height: 2rem;
+  width: 4rem;
+}
+
+.header-container .search-toolbar-container .filterForm #unfilter-btn {
+  display: none;
 }
 
 .header-container .functional-toolbar-container {
@@ -79,13 +135,13 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 0 3rem;
-  border: 1px solid blue;
+  border-top: 1px rgba(0, 0, 0, 0.1) solid;
+  border-bottom: 1px rgba(0, 0, 0, 0.1) solid;
 }
 
 .header-container .functional-toolbar-container .actions-container, .header-container .functional-toolbar-container .page-container {
   width: 35%;
   height: 2rem;
-  border: pink solid 1px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -164,6 +220,7 @@ body {
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2/3;
+  height: 3rem;
 }
 
 .data-container-labels h1 {
@@ -180,6 +237,32 @@ body {
 
 .col {
   margin: auto;
+}
+
+.name-col {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+}
+
+.name-col::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border-bottom: 1px solid green;
+  width: 50%;
 }
 
 .data-container {
@@ -206,8 +289,8 @@ body {
   position: absolute;
   width: 80px;
   height: 80px;
-  left: 50%;
   top: 50%;
+  left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
@@ -220,11 +303,11 @@ body {
   width: 64px;
   height: 64px;
   margin: 8px;
-  border: 8px solid #fff;
+  border: 5px solid #fff;
   border-radius: 50%;
   -webkit-animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
           animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: #81d385 transparent transparent transparent;
+  border-color: #93be9c transparent transparent transparent;
 }
 
 .lds-ring div:nth-child(1) {

@@ -942,6 +942,12 @@ body{
             
             form{
                 width: 100%;
+                input{
+                    height: 2rem;
+                    border-radius: .2rem;
+                    font-size: 1rem;
+                    padding: 0 1rem;
+                }
             }
             #form-submit{
                 margin: 2rem 0 0 10rem;
@@ -959,6 +965,14 @@ body{
             padding: 0 10rem;
             label{
                 padding: 1rem 0;
+            }
+            #numberInput{
+                background: url(../img/philippines.svg) no-repeat;
+                
+                background-position: center;
+                background-position-x: .5rem;
+                background-size: 3.5rem;
+                padding: .2rem 0 0 4.5rem;
             }
             
         }

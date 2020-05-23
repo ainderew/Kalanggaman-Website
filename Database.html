@@ -7,60 +7,72 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="header-container">
-        <div class="search-toolbar-container">
-            <form method = "POST" action="javascript:;" onsubmit="return getSearchedData();">
-                <input id="searchBar" type="text" name="search">
-            </form>
-        </div>
-        <div class="functional-toolbar-container">
-            <div class="actions-container">
-                   <div class="action-icon-container">
-                    <img class = "action-icon" src="/img/databaseIcons/delete.svg" alt="">
-                    <div class="icon-modal">
-                        <h1>Delete</h1>
-                    </div>
-                   </div>
-                   <div class="action-icon-container">
-                    <img class = "action-icon" src="/img/databaseIcons/refresh.svg" alt="">
-                    <div class="icon-modal">
-                        <h1>Refresh</h1>
-                    </div>
-                   </div>
+    <div class="menu"></div>
+    <div class="database-page-container">
+        <div class="header-container">
+            <div class="search-toolbar-container">
+                <form id="searchForm" method = "POST" action="javascript:;" onsubmit="return refreshSearchData();">
+                    <input class="border-color grey" id="searchBar" type="text" name="search">
+                </form>
+                
+                <form class="filterForm" method="GET" action="javascript:;" onsubmit="return filterByMonth();">
+                    <label for="day">Only Show</label>
+                    <select name="day" id="filterSelect">
+                        <option value="">This Month</option>
+                    </select>
+                    <button type="submit" id="filter-btn">Filter</button>
+                    <button type="button" onclick="refreshData()" id="unfilter-btn">Un-Filter</button>
+                </form>
+            
             </div>
+            <div class="functional-toolbar-container">
+                <div class="actions-container">
+                    <div class="action-icon-container">
+                        <img class = "action-icon" src="/img/databaseIcons/delete.svg" alt="">
+                        <div class="icon-modal">
+                            <h1>Delete</h1>
+                        </div>
+                    </div>
+                    <div class="action-icon-container">
+                        <img class = "action-icon" src="/img/databaseIcons/refresh.svg" alt="">
+                        <div class="icon-modal">
+                            <h1>Refresh</h1>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="page-container">
-                <div class="page-icon-container">
-                    <img id = "prevpage-btn" class = "action-icon" src="/img/databaseIcons/prev.svg" alt="">
-                    <div class="icon-modal">
-                        <h1>Previous</h1>
+                <div class="page-container">
+                    <div class="page-icon-container">
+                        <img id = "prevpage-btn" class = "action-icon" src="/img/databaseIcons/prev.svg" alt="">
+                        <div class="icon-modal">
+                            <h1>Previous</h1>
+                        </div>
                     </div>
-                </div>
-                <div class="page-icon-container">
-                    <img id ="nextpage-btn" class = "action-icon" src="/img/databaseIcons/next.svg" alt="">
-                    <div class="icon-modal">
-                        <h1>Next</h1>
+                    <div class="page-icon-container">
+                        <img id ="nextpage-btn" class = "action-icon" src="/img/databaseIcons/next.svg" alt="">
+                        <div class="icon-modal">
+                            <h1>Next</h1>
+                        </div>
                     </div>
-                </div>
-                <div class="page-counter-container">
-                    <h1> page <span id="currentPage">1</span> - <span id="totalPage">1</span></h1>
+                    <div class="page-counter-container">
+                        <h1> page <span id="currentPage">1</span> - <span id="totalPage">1</span></h1>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="data-container-labels">
-        <div class="checkbox-col col"> <input class="checkbox" type="checkbox"> </div>
-        <div class="name-col col"><h1>Name</h1></div>
-        <div class="email-col col"><h1>Email Address</h1></div>
-        <div class="phone-col col"><h1>Phone Number</h1></div>
-        <div class="date-col col"><h1>Date Reserved</h1></div>
-    </div>
+        <div class="data-container-labels">
+            <div class="checkbox-col col"> <input class="checkbox" type="checkbox"> </div>
+            <div class="name-col col"><h1>Name</h1></div>
+            <div class="email-col col"><h1>Email Address</h1></div>
+            <div class="phone-col col"><h1>Phone Number</h1></div>
+            <div class="date-col col"><h1>Date Reserved</h1></div>
+        </div>
 
-    <div class="data-container">
-        <ul class="data-list">  
-        </ul>
-        <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
-
+        <div class="data-container">
+            <ul class="data-list">  
+            </ul>
+                <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+        </div>
     </div>
     <script src="./js/Database_Page.js"></script>
 </body>

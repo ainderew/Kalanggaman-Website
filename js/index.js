@@ -417,15 +417,18 @@ function throttle (callback, limit) {
   }
 
 
-  const tester = async () =>{
-      const response = await fetch("http://localhost:3000/reserve",{
-          method: "GET",
-          mode: "cors"
-      })
-        .then(response => response.json())
-        .then(data => console.log(data));
 
-  }
-
-
-
+  TinyDatePicker(document.querySelector('#reservationDate'), {
+    format(date) {
+        let x = date.toString()
+        console.log(x)
+        let temp = x.split(" ")
+        let dateArr = [];
+        
+        dateArr.push(temp[1])
+        dateArr.push(temp[2])
+        dateArr.push(temp[3])
+        let reservationDate = dateArr.join("/")
+        return reservationDate;
+      }
+  });
