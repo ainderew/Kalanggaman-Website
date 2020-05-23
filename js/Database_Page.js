@@ -35,7 +35,7 @@ const pageBtnHider = (prev,next) => {
     (next == undefined) ? nextPage.style.display = "none" : nextPage.style.display = "inline-block";
 }
 const getData = async () =>{
-    const response = await fetch(`https://kalanggaman-api.herokuapp.com/database?page=${page}&limit=20`,{
+    const response = await fetch(`https://kalanggaman-api.herokuapp.com/database?page=${page}&limit=15`,{
         method: "GET",
         mode: "cors"
     })
@@ -70,20 +70,6 @@ const dataDisplay = () =>{
         borderColor.classList.add("grey")
     }
     arrayHolder.forEach((el,index)=>{
-        let formatedDate =el.date
-        let tempDayHolder ="";
-        let tempYearHolder ="";
-        let tempMonthHolder ="";
-        
-        // if (formatedDate !== undefined && formatedDate !== null){
-        //     formatedDate = el.date.split("-")
-        //     tempDayHolder = formatedDate[2].split("T")[0];
-        //     tempYearHolder = formatedDate[0];
-        //     tempMonthHolder = formatedDate[1]
-        //     formatedDate = `${tempMonthHolder}/${tempDayHolder}/${tempYearHolder}`
-
-        //     console.log("defined date")
-        // }
         let li = document.createElement("li");
         if (index%2 === 0){
             li.style.background = "#F5F7F7";
@@ -121,7 +107,7 @@ const getSearchedData = async () => {
  
 
 const getTotalPage = async () =>{
-    const response = await fetch(`https://kalanggaman-api.herokuapp.com/database?page=1&limit=20`,{
+    const response = await fetch(`https://kalanggaman-api.herokuapp.com/database?page=1&limit=15`,{
         method: "GET",
         mode: "cors"
     })

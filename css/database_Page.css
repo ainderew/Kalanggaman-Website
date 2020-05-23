@@ -14,6 +14,92 @@ body {
       grid-template-columns: 1fr 5fr;
 }
 
+.menu {
+  width: 20rem;
+  height: 100vh;
+  background: #222D31;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr .3fr 3fr .3fr 1fr;
+      grid-template-rows: 1fr .3fr 3fr .3fr 1fr;
+  color: #bbbbbb;
+}
+
+.menu-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.menu-row-1 {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0 5rem;
+  position: relative;
+}
+
+.menu-row-1 h1 {
+  font-size: 1.5rem;
+  padding-bottom: .2rem;
+}
+
+.menu-row-1 h2 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.menu-row-2,
+.menu-row-4 {
+  background: #1A2225;
+  color: #83979c;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 2rem;
+}
+
+.menu-row-2 h1,
+.menu-row-4 h1 {
+  font-size: 1rem;
+}
+
+.menu-row-3 {
+  height: 20rem;
+}
+
+.menu-row-3 .main-navigation {
+  height: 100%;
+  width: 100%;
+}
+
+.menu-row-3 .main-navigation li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+  cursor: pointer;
+  height: 4rem;
+  width: 100%;
+  padding: 0 2rem;
+  margin: 0 0 .5rem 0;
+}
+
+.menu-row-3 .main-navigation li:hover {
+  background: #1A2225;
+}
+
+.menu-row-3 h1 {
+  font-size: 1.3rem;
+}
+
 .database-page-container {
   width: 100%;
   height: 100%;
@@ -220,7 +306,7 @@ body {
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2/3;
-  height: 3rem;
+  height: 2rem;
 }
 
 .data-container-labels h1 {
@@ -269,10 +355,13 @@ body {
   -ms-grid-row: 3;
   -ms-grid-row-span: 1;
   grid-row: 3/4;
+  height: 70vh;
 }
 
 .data-container .data-list {
   width: 100%;
+  height: 100%;
+  overflow: auto;
 }
 
 .data-container .data-list .entry {
