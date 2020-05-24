@@ -191,7 +191,7 @@ getTotalPage();
 const ctx = document.getElementById('cavas').getContext('2d');
 
 const myChart = new Chart(ctx, {
-    type: 'bar',
+    type: 'line',
     data: {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
         datasets: [{
