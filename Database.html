@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/database_Page.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
@@ -16,8 +17,8 @@
         <div class="menu-row-2 menu-row"><h1>MAIN NAVIGATION</h1></div>
         <div class="menu-row-3">
             <ul class="main-navigation">
-                <li><h1>Database</h1></li>
-                <li><h1>Charts</h1></li>
+                <li class="active-page" id="databaseMenuBtn"><h1>Database</h1></li>
+                <li id="chartMenuBtn"><h1>Charts</h1></li>
                 <li><h1>Make Reservation</h1></li>
             </ul>
         </div>
@@ -46,7 +47,7 @@
             <div class="functional-toolbar-container">
                 <div class="actions-container">
                     <div class="action-icon-container">
-                        <img class = "action-icon" src="/img/databaseIcons/delete.svg" alt="">
+                        <img class = "action-icon" id="delete-btn" src="/img/databaseIcons/delete.svg" alt="">
                         <div class="icon-modal">
                             <h1>Delete</h1>
                         </div>
@@ -79,7 +80,7 @@
             </div>
         </div>
         <div class="data-container-labels">
-            <div class="checkbox-col col"> <input class="checkbox" type="checkbox"> </div>
+            <div class="checkbox-col col"> <input class="master-checkbox" type="checkbox"> </div>
             <div class="name-col col"><h1>Name</h1></div>
             <div class="email-col col"><h1>Email Address</h1></div>
             <div class="phone-col col"><h1>Phone Number</h1></div>
@@ -91,6 +92,14 @@
                 <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
         </div>
     </div>
+
+    <div class="chart-page-container screen-hider">
+        <canvas id="cavas" width="400" height="400"></canvas>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
     <script src="./js/Database_Page.js"></script>
+   
 </body>
 </html>

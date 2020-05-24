@@ -483,7 +483,6 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 3fr 1fr;
@@ -1166,8 +1165,8 @@ body {
   display: grid;
   -ms-grid-columns: 1.4fr 3fr;
       grid-template-columns: 1.4fr 3fr;
-  -webkit-box-shadow: 5px 5px 21px #e3e3e3,  -5px -5px 21px #ffffff;
-          box-shadow: 5px 5px 21px #e3e3e3,  -5px -5px 21px #ffffff;
+  -webkit-box-shadow: 5px 5px 21px #e3e3e3,  -5px -5px 21px #ffffff;
+          box-shadow: 5px 5px 21px #e3e3e3,  -5px -5px 21px #ffffff;
   border-radius: 3rem;
 }
 

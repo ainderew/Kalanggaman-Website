@@ -10,6 +10,7 @@ const totalPage = document.getElementById("totalPage");
 const searchedInput = document.getElementById("searchBar");
 const borderColor = document.querySelector(".border-color");
 
+
 (sessionStorage.page == null) ?  page = page : page = sessionStorage.page;
 
 
@@ -83,7 +84,8 @@ const dataDisplay = () =>{
         <div class="date-col col"><h1>${el.date}</h1></div>`
         dataList.appendChild(li);
     })
-    loader.style.display = "none"; 
+    loader.style.display = "none";
+    checkboxTracker() ;
     
 }
 
@@ -159,5 +161,103 @@ const buttonChanger = (showBtn,hideBtn) =>{
     hideBtn.style.display = "none"
 }
 
+const deleteBtn = document.getElementById("delete-btn")
+const checkboxTracker = () =>{
+    let checkboxArray = [];
+    let checkboxes = document.querySelectorAll(".checkbox");
+    checkboxes.forEach((el,index) =>{
+        el.addEventListener("click", ()=>{
+            (el.checked) ? checkboxArray.push(index) : checkboxArray.splice((checkboxArray.indexOf(index)),1);
+        })
+    })
+    deleteBtn.addEventListener("click",async ()=>{
+        dataList.innerHTML = ""
+        loader.style.display = "flex"
+        for(const el of checkboxArray){
+            await fetch(`https://kalanggaman-api.herokuapp.com/delete?name=${arrayHolder[el].name}&email=${arrayHolder[el].email}`)
+        }
+        await refreshData()
+    })
+
+}
 getData();
 getTotalPage();
+
+
+
+
+
+//charts
+const ctx = document.getElementById('cavas').getContext('2d');
+
+const myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        },
+        responsive: false
+    }
+});
+
+
+
+
+//menu
+//Screen
+const databaseScreen = document.querySelector(".database-page-container");
+const chartScreen = document.querySelector(".chart-page-container")
+
+//Menu Buttons
+const databaseMenuBtn = document.getElementById("databaseMenuBtn");
+const chartMenuBtn = document.getElementById("chartMenuBtn");
+
+
+let activeScreen = databaseScreen;
+let activeMenuBtn = databaseMenuBtn;
+
+const screenChanger = (screenIn,screenOut,menuIndicatorIn,menuIndicatorOut) =>{
+    screenIn.classList.remove("screen-hider");
+    menuIndicatorIn.classList.add("active-page");
+    screenOut.classList.add("screen-hider");
+    menuIndicatorOut.classList.remove("active-page");
+    activeScreen = screenIn;
+    activeMenuBtn = menuIndicatorIn;
+
+}
+databaseMenuBtn.addEventListener("click",()=>{
+    if (activeScreen !== databaseScreen){
+        screenChanger(databaseScreen,activeScreen,databaseMenuBtn,activeMenuBtn);
+    }
+})
+chartMenuBtn.addEventListener("click",()=>{
+    screenChanger(chartScreen,activeScreen,chartMenuBtn,activeMenuBtn);
+})
